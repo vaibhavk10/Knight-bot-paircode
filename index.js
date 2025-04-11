@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.listen(PORT, () => {
-    console.log(`YoutTube: @GlobalTechInfo\n\nGitHub: @GlobalTechInfo\n\nServer running on http://localhost:${PORT}`);
+    console.log(`YoutTube: @mr_unique_hacker\n\nGitHub: @mruniquehacker\n\nServer running on http://localhost:${PORT}`);
 });
 
 export default app;

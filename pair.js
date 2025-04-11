@@ -64,15 +64,12 @@ router.get('/', async (req, res) => {
 
                     // Send welcome message
                     await KnightBot.sendMessage(userJid, { 
-                        text: `🪀Support/Contact Developer\n\n\n⎆Donate: [Your Donation Link]\n\n⎆YouTube: https://youtube.com/@MrUniqueHacker\n\n⎆Telegram Channel: [Your Telegram Channel]\n\n⎆Telegram Chat: [Your Telegram Chat]\n\n⎆WhatsApp Gc: [Your WhatsApp Group]\n\n⎆WhatsApp Pm: [Your WhatsApp Number]\n\n⎆Instagram: [Your Instagram]\n\n⎆GitHub: [Your GitHub]\n\n` 
+                        text: `Join our Whatsapp channel \n\n https://whatsapp.com/channel/0029Va90zAnIHphOuO8Msp3A\n` 
                     });
 
                     // Send warning message
                     await KnightBot.sendMessage(userJid, { 
-                        text: `⚠️Do not share this file with anybody⚠️\n
-┌─❖
-│ Ohayo 😽
-└┬❖  
+                        text: `⚠️Do not share this file with anybody⚠️\n 
 ┌┤✑  Thanks for using Knight Bot
 │└────────────┈ ⳹        
 │©2024 Mr Unique Hacker 

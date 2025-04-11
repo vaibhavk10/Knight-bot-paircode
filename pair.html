@@ -7,11 +7,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     :root {
-      --primary-color: #2c3e50;
-      --secondary-color: #3498db;
-      --accent-color: #e74c3c;
-      --text-color: #ecf0f1;
-      --background-color: #1a1a1a;
+      --primary-color: #000000;
+      --secondary-color: #ffffff;
+      --accent-color: #f0f0f0;
+      --text-color: #000000;
+      --background-color: #ffffff;
+      --hover-color: #f5f5f5;
+      --border-color: rgba(0, 0, 0, 0.1);
     }
 
     * {
@@ -21,73 +23,62 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: var(--background-color);
       color: var(--text-color);
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 15px;
+      line-height: 1.5;
     }
 
     .container {
       width: 100%;
-      max-width: 500px;
-      background: rgba(44, 62, 80, 0.9);
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+      max-width: 400px;
+      background: var(--background-color);
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border-color);
     }
 
     .header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .logo {
-      width: 100px;
-      height: 100px;
-      margin: 0 auto 20px;
-      background: var(--secondary-color);
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 16px;
+      background: var(--primary-color);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 40px;
+      font-size: 28px;
       color: white;
-      box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     }
 
     .title {
-      font-size: 28px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--primary-color);
+      letter-spacing: -0.5px;
     }
 
     .subtitle {
-      font-size: 16px;
-      color: #bdc3c7;
-      margin-bottom: 30px;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.7);
+      margin-bottom: 20px;
     }
 
     .input-group {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .input-label {
@@ -95,118 +86,154 @@
       margin-bottom: 8px;
       font-weight: 500;
       color: var(--text-color);
+      font-size: 13px;
     }
 
     .input-field {
       width: 100%;
-      padding: 15px;
-      border: 2px solid rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.05);
+      padding: 12px;
+      border: 1.5px solid var(--border-color);
+      border-radius: 12px;
+      background: var(--background-color);
       color: var(--text-color);
-      font-size: 16px;
+      font-size: 15px;
       transition: all 0.3s ease;
     }
 
     .input-field:focus {
       outline: none;
-      border-color: var(--secondary-color);
-      box-shadow: 0 0 15px rgba(52, 152, 219, 0.2);
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
     }
 
     .generate-btn {
       width: 100%;
-      padding: 15px;
-      background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
+      padding: 12px;
+      background: var(--primary-color);
       border: none;
-      border-radius: 10px;
-      color: white;
-      font-size: 16px;
+      border-radius: 12px;
+      color: var(--secondary-color);
+      font-size: 15px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .generate-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
-    }
-
-    .generate-btn:active {
-      transform: translateY(0);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
     .code-display {
-      background: rgba(0, 0, 0, 0.2);
-      padding: 20px;
-      border-radius: 10px;
+      background: var(--hover-color);
+      padding: 16px;
+      border-radius: 12px;
       text-align: center;
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 600;
-      margin-bottom: 20px;
-      min-height: 80px;
+      margin-bottom: 16px;
+      min-height: 60px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 2px solid rgba(255, 255, 255, 0.1);
+      border: 1.5px solid var(--border-color);
+      color: var(--text-color);
     }
 
     .copy-btn {
       width: 100%;
-      padding: 15px;
-      background: rgba(255, 255, 255, 0.1);
-      border: none;
-      border-radius: 10px;
+      padding: 12px;
+      background: var(--hover-color);
+      border: 1.5px solid var(--border-color);
+      border-radius: 12px;
       color: var(--text-color);
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 600;
       cursor: pointer;
       transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
     }
 
     .copy-btn:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: var(--background-color);
+      border-color: var(--primary-color);
+    }
+
+    .channel-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-top: 12px;
+    }
+
+    .channel-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+    }
+
+    .channel-link i {
+      font-size: 16px;
+    }
+
+    .success-message {
+      color: #27ae60;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 16px;
+    }
+
+    .error-message {
+      color: #e74c3c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 16px;
     }
 
     .loading {
       display: none;
       text-align: center;
-      margin: 20px 0;
+      margin: 16px 0;
     }
 
     .loading i {
-      font-size: 30px;
-      color: var(--secondary-color);
+      font-size: 24px;
+      color: var(--primary-color);
       animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    .error {
-      color: var(--accent-color);
-      text-align: center;
-      margin-top: 10px;
-      font-size: 14px;
     }
 
     .footer {
       text-align: center;
-      margin-top: 30px;
-      font-size: 14px;
-      color: #7f8c8d;
+      margin-top: 20px;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.5);
     }
 
-    .footer a {
-      color: var(--secondary-color);
-      text-decoration: none;
-    }
+    @media (max-width: 480px) {
+      .container {
+        padding: 20px;
+        border-radius: 12px;
+      }
 
-    .footer a:hover {
-      text-decoration: underline;
+      .code-display {
+        font-size: 16px;
+        min-height: 50px;
+      }
     }
   </style>
 </head>
@@ -218,11 +245,14 @@
       </div>
       <h1 class="title">Knight Bot</h1>
       <p class="subtitle">Generate your WhatsApp pair code</p>
+      <a href="https://whatsapp.com/channel/0029Va90zAnIHphOuO8Msp3A" target="_blank" class="channel-link">
+        <i class="fab fa-whatsapp"></i> Join our WhatsApp Channel
+      </a>
     </div>
 
     <div class="input-group">
       <label class="input-label">Enter your WhatsApp number with country code</label>
-      <input type="text" id="mobileNumber" class="input-field" placeholder="Example: +917023951514">
+      <input type="tel" id="mobileNumber" class="input-field" placeholder="+91 7023951514" pattern="[+][0-9]{10,}" title="Please enter country code starting with + followed by number">
     </div>
 
     <button class="generate-btn" id="submit">
@@ -241,6 +271,11 @@
       <i class="fas fa-copy"></i> Copy Code
     </button>
 
+    <div class="error" id="error">
+      <i class="fas fa-exclamation-circle"></i> 
+      <span id="errorMessage"></span>
+    </div>
+
     <div class="footer">
       <p>© 2024 Mr Unique Hacker | Knight Bot</p>
     </div>
@@ -256,7 +291,7 @@
 
       const mobileNumber = mobileNumberInput.value.trim();
       if (!mobileNumber) {
-        codeDisplay.innerHTML = '<span style="color: #e74c3c">❗ Please enter your WhatsApp number</span>';
+        codeDisplay.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> Please enter your WhatsApp number</div>';
         return;
       }
 
@@ -265,11 +300,17 @@
 
       try {
         const response = await axios(`/code?number=${mobileNumber.replace(/[^0-9]/g, "")}`);
-        const code = response.data.code || "❗ Service Unavailable";
-        codeDisplay.innerHTML = `<span style="color: #2ecc71">CODE: ${code}</span>`;
+        const code = response.data.code || "Service Unavailable";
+        if (code === "Service Unavailable") {
+          codeDisplay.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> Service Unavailable</div>';
+        } else {
+          codeDisplay.innerHTML = `<div class="success-message"><i class="fas fa-check-circle"></i> CODE: ${code}</div>`;
+          codeDisplay.classList.add('success');
+          setTimeout(() => codeDisplay.classList.remove('success'), 500);
+        }
       } catch (error) {
         console.error("Error generating code:", error);
-        codeDisplay.innerHTML = '<span style="color: #e74c3c">❗ Error generating code. Please try again.</span>';
+        codeDisplay.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> Error generating code. Please try again.</div>';
       } finally {
         loadingSpinner.style.display = "none";
       }
