@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Knight Bot - Pair Code Generator</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   <style>
     :root {
       --primary-color: #000000;
@@ -23,7 +23,7 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-family: 'Inter', sans-serif;
       background: var(--background-color);
       color: var(--text-color);
       min-height: 100vh;
@@ -31,7 +31,6 @@
       justify-content: center;
       align-items: center;
       padding: 15px;
-      line-height: 1.5;
     }
 
     .container {
@@ -68,13 +67,42 @@
       font-weight: 700;
       margin-bottom: 8px;
       color: var(--primary-color);
-      letter-spacing: -0.5px;
     }
 
     .subtitle {
       font-size: 14px;
       color: rgba(0, 0, 0, 0.7);
       margin-bottom: 20px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .social-icons a {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-icons a.youtube { background: #FF0000; }
+    .social-icons a.telegram { background: #0088cc; }
+    .social-icons a.whatsapp { background: #25D366; }
+    .social-icons a.github { background: #333; }
+
+    .social-icons a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
     .input-group {
@@ -85,7 +113,6 @@
       display: block;
       margin-bottom: 8px;
       font-weight: 500;
-      color: var(--text-color);
       font-size: 13px;
     }
 
@@ -97,7 +124,6 @@
       background: var(--background-color);
       color: var(--text-color);
       font-size: 15px;
-      transition: all 0.3s ease;
     }
 
     .input-field:focus {
@@ -138,7 +164,6 @@
       align-items: center;
       justify-content: center;
       border: 1.5px solid var(--border-color);
-      color: var(--text-color);
     }
 
     .copy-btn {
@@ -147,11 +172,9 @@
       background: var(--hover-color);
       border: 1.5px solid var(--border-color);
       border-radius: 12px;
-      color: var(--text-color);
       font-size: 15px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s ease;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -161,30 +184,6 @@
     .copy-btn:hover {
       background: var(--background-color);
       border-color: var(--primary-color);
-    }
-
-    .channel-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      background: #25D366;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      margin-top: 12px;
-    }
-
-    .channel-link:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
-    }
-
-    .channel-link i {
-      font-size: 16px;
     }
 
     .success-message {
@@ -217,6 +216,11 @@
       animation: spin 1s linear infinite;
     }
 
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
     .footer {
       text-align: center;
       margin-top: 20px;
@@ -240,14 +244,15 @@
 <body>
   <div class="container">
     <div class="header">
-      <div class="logo">
-        <i class="fas fa-robot"></i>
-      </div>
+      <div class="logo"><i class="fas fa-robot"></i></div>
       <h1 class="title">Knight Bot</h1>
       <p class="subtitle">Generate your WhatsApp pair code</p>
-      <a href="https://whatsapp.com/channel/0029Va90zAnIHphOuO8Msp3A" target="_blank" class="channel-link">
-        <i class="fab fa-whatsapp"></i> Join our WhatsApp Channel
-      </a>
+      <div class="social-icons">
+        <a href="https://www.youtube.com/@mr_unique_hacker?sub_confirmation=1" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+        <a href="https://t.me/+hxojkc7kaVViYzdl" target="_blank" class="telegram"><i class="fab fa-telegram-plane"></i></a>
+        <a href="https://whatsapp.com/channel/0029Va90zAnIHphOuO8Msp3A" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://github.com/mruniquehacker/Knightbot-md" target="_blank" class="github"><i class="fab fa-github"></i></a>
+      </div>
     </div>
 
     <div class="input-group">
@@ -270,8 +275,6 @@
     <button class="copy-btn" id="copy" onclick="copyCode()">
       <i class="fas fa-copy"></i> Copy Code
     </button>
-
-    
 
     <div class="footer">
       <p>© 2024 Mr Unique Hacker | Knight Bot</p>
@@ -302,8 +305,6 @@
           codeDisplay.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> Service Unavailable</div>';
         } else {
           codeDisplay.innerHTML = `<div class="success-message"><i class="fas fa-check-circle"></i> CODE: ${code}</div>`;
-          codeDisplay.classList.add('success');
-          setTimeout(() => codeDisplay.classList.remove('success'), 500);
         }
       } catch (error) {
         console.error("Error generating code:", error);
